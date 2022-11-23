@@ -20,12 +20,12 @@ def convert():
 	yt = YouTube(par)
 
 	print("start!")
+	# mp4 다운로드
 	if(Radiovar.get() == 1):
 		print("type: mp4")
 		yt.streams.filter().all()
 		yt.streams.filter(progressive=True, file_extension='mp4').first().download() 
-		
-		print
+	# mp3 다운로드
 	else:
 		print("type: mp3")
 		yt.streams.filter(only_audio=True).all()
@@ -43,7 +43,7 @@ def convert():
 	messagebox.showinfo("다운여부","성공!") #메시지 박스를 띄운다.
 
 
-#main
+# main
 place = Label(root, text="\n")
 lbl = Label(root, text="링크 URL")
 lnk = Entry(root)
